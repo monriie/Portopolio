@@ -1,0 +1,328 @@
+@import "tailwindcss";
+
+/* Mengatur warna, ukuran, jenis huruf, dan animasi yang digunakan bersama pada tampilan portfolio. */
+@theme {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  /* Warna latar halaman dan panel. */
+  --color-cosmos: #0d0f14;
+  --color-night: #101522;
+  --color-deep: #0b1020;
+  --color-surface: #151b2b;
+  --color-surface-2: #1b2236;
+  --color-line: rgb(247 245 240 / 0.08);
+  --color-line-strong: rgb(247 245 240 / 0.16);
+
+  /* Warna teks utama dan teks pendukung. */
+  --color-warm: #f7f5f0;
+  --color-cream: #f3e9d7;
+  --color-mist: #a9adb7;
+  --color-dim: #7c8293;
+
+  /* Warna aksen untuk penanda dan elemen interaktif. */
+  --color-mint: #8fd5c4;
+  --color-dusty: #8ba9d9;
+  --color-lavender: #b8a7d9;
+  --color-peach: #e6a792;
+  --color-lantern: #d95f5f;
+  --color-gold: #d2ae62;
+
+  --radius-card: 1.25rem;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --animate-page-in: page-in 360ms var(--ease-soft) both;
+  --animate-rise: rise 320ms var(--ease-soft) both;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-twinkle: twinkle 4s ease-in-out infinite;
+  --animate-drift: drift 90s ease-in-out infinite alternate;
+  --animate-orbit: orbit 2.4s linear infinite;
+  --animate-shimmer: shimmer 1.8s ease-in-out infinite;
+  --animate-pop: pop 360ms var(--ease-soft) both;
+  --animate-bob: bob 7s ease-in-out infinite;
+  --animate-ear-wiggle: ear-wiggle 5.5s ease-in-out infinite;
+  --animate-blink: blink 4.8s ease-in-out infinite;
+  --animate-wave: wave 3.2s ease-in-out infinite;
+  --animate-shoot: shoot 9s linear infinite;
+  --animate-boop: boop 900ms var(--ease-bounce) both;
+  --animate-char-in: char-in 360ms var(--ease-bounce) both;
+  --animate-burst: burst 850ms var(--ease-soft) forwards;
+  --animate-bubble-in: bubble-in 360ms var(--ease-bounce) both;
+  --animate-glow: glow 6s ease-in-out infinite;
+  --animate-cloud-drift: cloud-drift 12s ease-in-out infinite alternate;
+  --animate-twinkle-pop: twinkle-pop 3.6s ease-in-out infinite;
+  --animate-shine: shine 900ms var(--ease-soft);
+  --animate-wiggle: wiggle 600ms var(--ease-bounce);
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-fly-in: fly-in 1.2s var(--ease-bounce) both;
+
+  @keyframes page-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 1; }
+  }
+  @keyframes drift {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-60px, -30px, 0); }
+  }
+  @keyframes orbit {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.45; }
+    50% { opacity: 0.8; }
+  }
+  @keyframes bob {
+    0%, 100% { transform: translate(0, 0) rotate(-4deg); }
+    25% { transform: translate(6px, -10px) rotate(1deg); }
+    50% { transform: translate(0, -18px) rotate(5deg); }
+    75% { transform: translate(-6px, -8px) rotate(-1deg); }
+  }
+  @keyframes ear-wiggle {
+    0%, 78%, 100% { transform: rotate(0); }
+    82% { transform: rotate(-12deg); }
+    86% { transform: rotate(8deg); }
+    90% { transform: rotate(-5deg); }
+    94% { transform: rotate(2deg); }
+  }
+  @keyframes blink {
+    0%, 90%, 100% { transform: scaleY(1); }
+    93% { transform: scaleY(0.1); }
+    96% { transform: scaleY(1); }
+  }
+  @keyframes wave {
+    0%, 55%, 100% { transform: rotate(0); }
+    10% { transform: rotate(-22deg); }
+    20% { transform: rotate(10deg); }
+    30% { transform: rotate(-18deg); }
+    40% { transform: rotate(6deg); }
+  }
+  @keyframes shoot {
+    0% { transform: translate(0, 0); opacity: 0; }
+    2% { opacity: 1; }
+    9% { transform: translate(-260px, 130px); opacity: 0; }
+    100% { transform: translate(-260px, 130px); opacity: 0; }
+  }
+  @keyframes boop {
+    0% { transform: rotate(0) scale(1); }
+    35% { transform: rotate(-20deg) scale(0.92); }
+    70% { transform: rotate(380deg) scale(1.12); }
+    100% { transform: rotate(360deg) scale(1); }
+  }
+  @keyframes char-in {
+    from { opacity: 0; transform: translateY(0.55em) rotate(10deg); }
+    to { opacity: 1; transform: translateY(0) rotate(0); }
+  }
+  @keyframes burst {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(0.3) rotate(0); }
+    100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1) rotate(120deg); }
+  }
+  @keyframes bubble-in {
+    from { opacity: 0; transform: translateY(12px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes glow {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+  }
+  @keyframes cloud-drift {
+    from { transform: translateX(0); }
+    to { transform: translateX(22px); }
+  }
+  @keyframes twinkle-pop {
+    0%, 100% { opacity: 0.3; transform: scale(0.6) rotate(0); }
+    50% { opacity: 1; transform: scale(1.1) rotate(45deg); }
+  }
+  @keyframes shine {
+    from { transform: translateX(-120%) skewX(-18deg); opacity: 0.55; }
+    to { transform: translateX(380%) skewX(-18deg); opacity: 0; }
+  }
+  @keyframes fly-in {
+    from { opacity: 0; transform: translate(-60px, 80px) scale(0.7) rotate(-20deg); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes marquee {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+  }
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-12deg); }
+    50% { transform: rotate(9deg); }
+    75% { transform: rotate(-4deg); }
+  }
+  @keyframes pop {
+    0% { opacity: 0; transform: scale(0.85) translateY(6px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+  }
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+    background: var(--color-cosmos);
+    color-scheme: dark;
+  }
+
+  body {
+    overflow: hidden;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background: rgb(143 213 196 / 0.3);
+    color: var(--color-warm);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-mint);
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+  }
+
+  /* Mengatur tampilan bilah gulir di dalam panel. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(247 245 240 / 0.14) transparent;
+  }
+}
+
+/* Menjaga bingkai dan panel desktop tetap sejajar dengan layar aplikasi. */
+@media (min-width: 768px) {
+  .app-frame {
+    --frame-width: min(calc(100vw - 3rem), 80rem);
+    --frame-height: min(calc(100dvh - 3rem), 58rem);
+    --frame-bezel: calc(0.5rem + 1px);
+    width: var(--frame-width);
+    height: var(--frame-height);
+  }
+
+  .app-frame dialog.drawer {
+    top: calc((100dvh - var(--frame-height)) / 2 + var(--frame-bezel));
+    right: calc((100vw - var(--frame-width)) / 2 + var(--frame-bezel));
+    bottom: auto;
+    width: min(40rem, calc(var(--frame-width) - 2 * var(--frame-bezel)));
+    height: calc(var(--frame-height) - 2 * var(--frame-bezel));
+    border-radius: 1.5rem;
+  }
+}
+
+/* Mengatur animasi buka dan tutup panel dialog tanpa pustaka animasi tambahan. */
+dialog.drawer {
+  --drawer-from: translate3d(24px, 0, 0);
+  opacity: 0;
+  transform: var(--drawer-from);
+  transition:
+    opacity 280ms var(--ease-soft),
+    transform 320ms var(--ease-soft),
+    overlay 320ms allow-discrete,
+    display 320ms allow-discrete;
+}
+@media (max-width: 767px) {
+  dialog.drawer {
+    --drawer-from: translate3d(0, 24px, 0);
+  }
+}
+dialog.drawer[open] {
+  opacity: 1;
+  transform: none;
+}
+@starting-style {
+  dialog.drawer[open] {
+    opacity: 0;
+    transform: var(--drawer-from);
+  }
+}
+dialog.drawer::backdrop {
+  background: rgb(8 10 18 / 0);
+  backdrop-filter: blur(0);
+  transition:
+    background 280ms ease,
+    backdrop-filter 280ms ease,
+    overlay 320ms allow-discrete,
+    display 320ms allow-discrete;
+}
+dialog.drawer[open]::backdrop {
+  background: rgb(8 10 18 / 0.62);
+  backdrop-filter: blur(3px);
+}
+@starting-style {
+  dialog.drawer[open]::backdrop {
+    background: rgb(8 10 18 / 0);
+    backdrop-filter: blur(0);
+  }
+}
+
+/* Panel navigasi pada ponsel muncul dari sisi kiri. */
+dialog.sheet-left {
+  transform: translateX(-100%);
+  transition:
+    transform 380ms var(--ease-soft),
+    overlay 380ms allow-discrete,
+    display 380ms allow-discrete;
+}
+dialog.sheet-left[open] {
+  transform: none;
+}
+@starting-style {
+  dialog.sheet-left[open] {
+    transform: translateX(-100%);
+  }
+}
+dialog.sheet-left::backdrop {
+  background: rgb(8 10 18 / 0);
+  transition:
+    background 300ms ease,
+    overlay 380ms allow-discrete,
+    display 380ms allow-discrete;
+}
+dialog.sheet-left[open]::backdrop {
+  background: rgb(8 10 18 / 0.6);
+}
+@starting-style {
+  dialog.sheet-left[open]::backdrop {
+    background: rgb(8 10 18 / 0);
+  }
+}
+
+/* Animasi bagian SVG menggunakan pusat batas elemen masing masing. */
+.svg-origin-center {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.svg-origin-bottom {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
