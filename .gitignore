@@ -1,0 +1,19 @@
+# Mengabaikan dependensi, hasil pembuatan aplikasi, cache, kredensial, dan log.
+node_modules/
+.next/
+out/
+dist/
+build/
+.cache/
+.env*
+next-env.d.ts
+*.tsbuildinfo
+*-debug.log*
+logs/
+*.log
+.figma/runtime/
+.tmp-*
+/.figma/design-context/
+
+# Folder berikut dikelola oleh alat bantu dan tidak termasuk kode sumber proyek.
+/.plugins/

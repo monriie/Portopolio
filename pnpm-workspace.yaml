@@ -1,0 +1,14 @@
+# Memeriksa kecocokan dependensi pendamping saat pemasangan.
+strictPeerDependencies: true
+
+# Menyiapkan paket biner untuk komputer saat ini serta Linux dengan arsitektur ARM64.
+supportedArchitectures:
+  os:
+    - current
+    - linux
+  cpu:
+    - current
+    - arm64
+  libc:
+    - current
+    - glibc

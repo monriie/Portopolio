@@ -1,0 +1,35 @@
+{
+  "name": "aria-kusuma-portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "packageManager": "pnpm@10.34.3",
+  "scripts": {
+    "dev": "node --no-deprecation node_modules/next/dist/bin/next dev --hostname 0.0.0.0",
+    "build": "node --no-deprecation node_modules/next/dist/bin/next build",
+    "start": "node --no-deprecation node_modules/next/dist/bin/next start",
+    "typecheck": "tsc --noEmit",
+    "format": "oxfmt"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "nodemailer": "^7.0.13",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "24.12.3",
+    "@types/nodemailer": "7.0.12",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "oxfmt": "^0.73.0",
+    "postcss": "^8.5.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": ">=24.22.1",
+    "pnpm": "^9 || ^10 || ^11"
+  }
+}

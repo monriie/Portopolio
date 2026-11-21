@@ -1,0 +1,16 @@
+# Versi alat yang digunakan khusus untuk proyek ini.
+[tools]
+node = "24.22.1"
+"aqua:pnpm/pnpm" = "10.34.3"
+
+[tasks.dev]
+description = "Menjalankan aplikasi dengan versi Node.js dan pnpm milik proyek"
+run = "pnpm dev"
+
+[tasks.check]
+description = "Memeriksa TypeScript tanpa membuat hasil produksi"
+run = "pnpm typecheck"
+
+[tasks.build]
+description = "Membuat hasil produksi portfolio untuk diterapkan"
+run = "pnpm build"

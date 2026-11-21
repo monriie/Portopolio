@@ -1,0 +1,11 @@
+// Menentukan aturan penulisan kode saat perintah pemformatan dijalankan.
+import type { OxfmtConfig } from 'oxfmt'
+
+export default {
+  ignorePatterns: ['tsconfig.json'],
+  printWidth: 100,
+  semi: false,
+  singleQuote: true,
+  sortPackageJson: false,
+  trailingComma: 'all',
+} satisfies OxfmtConfig
