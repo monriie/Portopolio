@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Meminta alat Figma menganalisis rute aplikasi dengan argumen yang diteruskan.
+set -euo pipefail
+
+exec figma-analyze routes "$@"

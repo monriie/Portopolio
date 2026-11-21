@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Meneruskan argumen ke perintah pemformatan kode proyek.
+set -euo pipefail
+
+pnpm run format -- "$@"

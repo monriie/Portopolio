@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Memasang dependensi dalam lingkungan templat Figma.
+set -euo pipefail
+
+pnpm install --no-frozen-lockfile

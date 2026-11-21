@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Menjalankan layanan bahasa TypeScript untuk editor melalui masukan dan keluaran standar.
+set -euo pipefail
+exec pnpm dlx --package=@vtsls/language-server@^0.3.0 vtsls --stdio

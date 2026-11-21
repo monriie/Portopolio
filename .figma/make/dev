@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Peluncur pengembangan lama yang digunakan oleh lingkungan Figma.
+set -euo pipefail
+
+# Percobaan pembuatan peta impor admin berasal dari templat Payload sebelumnya.
+# Perintah tersebut sudah dihapus dari package.json sehingga kegagalannya dilewati.
+# Peluncur Windows pada folder utama tidak menjalankan skrip ini.
+pnpm generate:importmap || echo "[dev] generate:importmap skipped (Payload backend not connected yet)"
+
+pnpm run dev
